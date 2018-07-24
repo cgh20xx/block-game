@@ -1,3 +1,3 @@
 # block-game
 
-(Start Game)[href=https://cgh20xx.github.io/block-game/]
+[Start Game](https://cgh20xx.github.io/block-game/)
