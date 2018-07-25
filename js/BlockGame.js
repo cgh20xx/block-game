@@ -24,9 +24,9 @@ class BlockGame {
         console.log('game start');
         let gridSetting = {
             x: 30,
-            y: 50,
+            y: 20,
             cols: 8,
-            rows: 4,
+            rows: 10,
             padding: 2
         }
         this.blockGrid = new BlockGrid(this.ctx, gridSetting);
@@ -43,8 +43,6 @@ class BlockGame {
             self.circle.x = e.pageX;
             self.circle.y = e.pageY;
         });
-        this.ctx.strokeStyle = 'red';
-
 
         this._loop();
     }
@@ -62,15 +60,12 @@ class BlockGame {
         // }
 
         // console.log(this.blockGrid.blockPool);
+        this.ctx.strokeStyle = 'red';
         this.blockGrid.blockPool.forEachAlive(function(block) {
             if (utils.circleRectOverlap(this.circle, block)) {
-                // console.log('yyy');
                 this.ctx.strokeStyle = 'yellow';
                 block.kill();
                 return false;
-            } else {
-                // console.log('rrr');
-                this.ctx.strokeStyle = 'red';
             }
         }, this);
     };
